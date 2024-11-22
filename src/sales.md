@@ -6,7 +6,6 @@ theme: dashboard
 
 ```js
 const data = await FileAttachment("./data/video-game-sales-data.json").json();
-console.log("data", data)
 const categories = data.children.map(d => d.name);
 ```
 
