@@ -1,4 +1,4 @@
-# Video Games Sales
+# Video Game Sales
 
 > Video game sales data per platform
 
