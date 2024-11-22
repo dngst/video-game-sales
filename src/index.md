@@ -11,7 +11,7 @@ const totalSales = data.children.reduce((acc, d) => acc + d3.sum(d.children, c =
 
 <div class="hero">
   <h1>Video Game Sales</h1>
-  <h2>Explore the sales of video games by platform</h2>
+  <h2>Explore video game sales by platform</h2>
 </div>
 
 <div class="grid grid-cols-2">
@@ -24,6 +24,7 @@ const totalSales = data.children.reduce((acc, d) => acc + d3.sum(d.children, c =
     <span class="big">${videoGamesCount}</span>
   </div>
 </div>
+
 <div class="card">
   <h2>Total Sales (M)</span></h2>
   <span class="big">${Math.round(totalSales)}</span>
