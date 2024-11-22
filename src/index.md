@@ -2,10 +2,31 @@
 toc: false
 ---
 
+```js
+const data = await FileAttachment("./data/video-game-sales-data.json").json();
+const categories = data.children.map(d => d.name);
+const videoGamesCount = data.children.reduce((acc, d) => acc + d.children.length, 0);
+const totalSales = data.children.reduce((acc, d) => acc + d3.sum(d.children, c => c.value), 0);
+```
+
 <div class="hero">
   <h1>Video Game Sales</h1>
-  <h2>Welcome to your new app! Edit&nbsp;<code style="font-size: 90%;">src/index.md</code> to change this page.</h2>
-  <a href="https://observablehq.com/framework/getting-started">Get started<span style="display: inline-block; margin-left: 0.25rem;">↗︎</span></a>
+  <h2>Explore the sales of video games by platform</h2>
+</div>
+
+<div class="grid grid-cols-2">
+  <div class="card">
+    <h2>Platforms</h2>
+    <span class="big">${categories.length}</span>
+  </div>
+  <div class="card">
+    <h2>Video Games</span></h2>
+    <span class="big">${videoGamesCount}</span>
+  </div>
+</div>
+<div class="card">
+  <h2>Total Sales (M)</span></h2>
+  <span class="big">${Math.round(totalSales)}</span>
 </div>
 
 <style>
